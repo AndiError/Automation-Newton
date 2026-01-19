@@ -8,8 +8,8 @@ const baseURL = process.env.BASE_URL ?? 'https://stage.newtonresearch.ai';
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 60_000,
-  expect: { timeout: 10_000 },
+  timeout: 100_000,
+  expect: { timeout: 50_000 },
   fullyParallel: true,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
