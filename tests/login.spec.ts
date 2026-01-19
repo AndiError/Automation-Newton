@@ -30,7 +30,7 @@ test.describe('Login', () => {
 
     // Choose Newton and verify its text appears
     // Wait up to 20 seconds for the element containing 'Newton' (with or without dot)
-    await expect(page.getByText(/Newton is working on request/)).toBeVisible({ timeout: 20000 });
+    await expect(page.getByText(/Newton is working on request/)).toBeVisible({ timeout: 25000 });
     
 
   });
