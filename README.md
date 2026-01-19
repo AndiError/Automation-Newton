@@ -54,3 +54,4 @@ Then every PR / push to `main` will run `npm test` and upload the HTML report ar
 - The selectors in `tests/pages/LoginPage.ts` are **generic** (`getByLabel`, `getByPlaceholder`, button by role). If Newton UI uses custom inputs without labels, you may need to adjust selectors.
 - Keep credentials in **GitHub Secrets** only (never commit `.env`).
 
+# Automation-Newton
