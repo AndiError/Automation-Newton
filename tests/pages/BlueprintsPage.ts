@@ -14,9 +14,8 @@ export class BlueprintsPage {
     await this.page.getByRole('menuitem', { name: 'Blueprints' }).click();
     // Verify we're on Blueprints page
     await expect(
-      this.page.getByText('Blueprints', { exact: true }),
-      'The title "Blueprints" should be visible on the page.'
-    ).toBeVisible({ timeout: 30000 });
+        this.page.locator('h1', { hasText: 'Blueprints' })
+    ).toBeVisible();
   }
 
   /**
