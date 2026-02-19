@@ -32,6 +32,22 @@ export class LoginPage {
   async assertLoggedIn() {
     // Basic post-login assertion:
     await expect(this.page).not.toHaveURL(/\/login/i);
+    
+    // Wait for "More options" button to appear (indicates app is loaded)
+    const appElement = this.page.getByRole('button', { name: 'More options' });
+    if ((await appElement.count()) > 0) {
+      await appElement.waitFor({ state: 'visible', timeout: 10000 });
+    }
+    
+    // Wait for "Welcome to Newton" message (if present)
+    try {
+      await this.page.getByText('Welcome to Newton').waitFor({
+        state: 'visible',
+        timeout: 10000,
+      });
+    } catch {
+      // Welcome message might not always appear, continue anyway
+    }
   }
 }
 
